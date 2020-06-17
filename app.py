@@ -31,7 +31,7 @@ db = SQLAlchemy(app)
 
 
 
-url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,VET,CELR,THETA,LTC,MCO,BNB,EOS,XLM,MNE,XTZ,CRO,WAVES,ZIL,RVN,USDC,ENJ,LINK,NRG,BAT,USDT,ENJ,KICK,SNX,KNC,REN&tsyms=EUR,BTC'
+url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,CHZ,ETH,VET,CELR,THETA,LTC,MCO,BNB,EOS,XLM,MNE,XTZ,CRO,WAVES,ZIL,RVN,USDC,ENJ,LINK,NRG,BAT,USDT,ENJ,KICK,SNX,KNC,REN&tsyms=EUR,BTC'
 parameters = {
 
 }
@@ -164,6 +164,7 @@ def bitcoin():
         myVET = 7000
         myTHETA = 500
         myCELR = 6000
+        myCHZ = 9000
   
         btcEUR = data['BTC']['EUR']
         ethEUR = data['ETH']['EUR']
@@ -190,6 +191,7 @@ def bitcoin():
         vetEUR = data['VET']['EUR']
         thetaEUR = data['THETA']['EUR']
         celrEUR = data['CELR']['EUR']
+        chzEUR = data['CHZ']['EUR']
 
         totalBTC_EUR = round(myBTC*btcEUR ,2)
         totalETH_EUR = round(myETH*ethEUR ,2)
@@ -216,10 +218,11 @@ def bitcoin():
         totalVET_EUR = round(myVET*vetEUR, 2)
         totalTHETA_EUR = round(myTHETA*thetaEUR, 2)
         totalCELR_EUR = round(myCELR*celrEUR, 2)
+        totalCHZ_EUR = round(myCHZ*chzEUR, 2)
 
-        total = totalCELR_EUR + totalVET_EUR + totalTHETA_EUR + totalBTC_EUR + totalMCO_EUR +totalETH_EUR +totalEOS_EUR + totalXLM_EUR + totalLINK_EUR + totalNRG_EUR + totalBAT_EUR + totalUSDT_EUR + totalBNB_EUR + totalCRO_EUR + totalUSDC_EUR + totalZIL_EUR + totalENJ_EUR + totalWAVES_EUR + totalSNX_EUR + totalKNC_EUR + totalREN_EUR + totalRVN_EUR + totalXTZ_EUR 
+        total = totalCHZ_EUR + totalCELR_EUR + totalVET_EUR + totalTHETA_EUR + totalBTC_EUR + totalMCO_EUR +totalETH_EUR +totalEOS_EUR + totalXLM_EUR + totalLINK_EUR + totalNRG_EUR + totalBAT_EUR + totalUSDT_EUR + totalBNB_EUR + totalCRO_EUR + totalUSDC_EUR + totalZIL_EUR + totalENJ_EUR + totalWAVES_EUR + totalSNX_EUR + totalKNC_EUR + totalREN_EUR + totalRVN_EUR + totalXTZ_EUR 
         
-        totalOther = totalCELR_EUR + totalVET_EUR + totalTHETA_EUR + totalMCO_EUR+ totalEOS_EUR + totalXLM_EUR + totalNRG_EUR + totalBAT_EUR + totalUSDT_EUR + totalBNB_EUR + totalCRO_EUR + totalUSDC_EUR + totalZIL_EUR + totalWAVES_EUR + totalSNX_EUR + totalKNC_EUR + totalREN_EUR + totalRVN_EUR + totalXTZ_EUR 
+        totalOther = totalCHZ_EUR + totalCELR_EUR + totalVET_EUR + totalTHETA_EUR + totalMCO_EUR+ totalEOS_EUR + totalXLM_EUR + totalNRG_EUR + totalBAT_EUR + totalUSDT_EUR + totalBNB_EUR + totalCRO_EUR + totalUSDC_EUR + totalZIL_EUR + totalWAVES_EUR + totalSNX_EUR + totalKNC_EUR + totalREN_EUR + totalRVN_EUR + totalXTZ_EUR 
         
         # Pie chart, where the slices will be ordered and plotted counter-clockwise:
         labels = 'Btc', 'Eth', 'Link', 'ENJ', 'Other'
@@ -258,6 +261,7 @@ def bitcoin():
         vetEUR = vetEUR, myVET = myVET, totalVET_EUR = totalVET_EUR,
         thetaEUR = thetaEUR, myTHETA = myTHETA, totalTHETA_EUR = totalTHETA_EUR,
         celrEUR = celrEUR, myCELR = myCELR, totalCELR_EUR = totalCELR_EUR,
+        chzEUR = chzEUR, myCHZ = myCHZ, totalCHZ_EUR = totalCHZ_EUR,
         total = round(total, 2)
         )
         
