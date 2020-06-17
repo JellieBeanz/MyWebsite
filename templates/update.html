@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<div id="contact" class="section db">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Update Task </h3>
+        </div><!-- end title -->
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div class="contact_form">
+                    <div id="message"></div>
+                    <br>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                    <form action="/update/{{task.id}}" method="POST">
+                        <input class="form-control" name="content" id="content" type="text" value="{{task.content}}" required="required" data-validation-required-message="Please enter a task.">
+                        <button id="sendMessageButton" class="sim-btn hvr-bounce-to-top" type="submit">Add Task</button>
+                    </form>
+                    </div>
+                </div>  
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+
+
+{% endblock %}

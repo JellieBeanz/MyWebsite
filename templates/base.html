@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block head %}{% endblock %}
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{  url_for('static', filename= 'css/bootstrap.min.css') }}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{  url_for('static', filename= 'css/style.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{  url_for('static', filename= 'css/responsive.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{  url_for('static', filename= 'css/custom.css') }}">
+    <!-- ALL JS FILES -->
+    <script src="/static/js/all.js"></script>
+    
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+</head>
+
+<body id="page-top" class="politics_version">
+
+    {% block body %} {% endblock %}
+</body>
+
+</html>
