@@ -5,7 +5,6 @@ import json
 import matplotlib.pyplot as plt, mpld3
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from flask_google_recaptcha import GoogleReCaptcha
 from datetime import datetime
 
 from twilio.rest import Client
@@ -15,8 +14,7 @@ number = config('NUMBER')
 accSID = config('TWILIO_ACCOUNT_SID')
 auth = config('TWILIO_AUTH_TOKEN') 
 
-recaptcha_pub = config('RECAPTCHA_PUBLIC_KEY')
-recaptcha_pri = config('RECAPTCHA_PRIVATE_KEY')
+
 
 
 
@@ -29,8 +27,7 @@ to_whatsapp_number= number
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
-recaptcha = GoogleReCaptcha()
-recaptcha.init_app(app)
+
 
 
 
@@ -75,21 +72,19 @@ def render_metals():
 @app.route('/whatsapp', methods=['POST', 'GET'])
 def sendmessage():
 
-    if recaptcha.verify():
-        if request.method == 'POST':
-            name = request.form['name']
-            email = request.form['email']
-            message = request.form['message']
-            try:    
-                client.messages.create(body= 'From: ' + name + ' Email: ' + email + ' Message: ' + message,
-                            from_=from_whatsapp_number,
-                            to=to_whatsapp_number)
-                return redirect('/')
-            except:
-                return 'Could not send message'
-    else:
-        return 'Could not send message'
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        try:    
+            client.messages.create(body= 'From: ' + name + ' Email: ' + email + ' Message: ' + message,
+                        from_=from_whatsapp_number,
+                        to=to_whatsapp_number)
+            return redirect('/')
+        except:
+            return 'Could not send message'
 
+        
 @app.route('/taskmaster', methods=['POST', 'GET'])
 def taskmaster():
     
