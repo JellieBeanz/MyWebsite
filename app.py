@@ -22,7 +22,7 @@ secret_key = config('RECAPTCHA_PRIVATE_KEY')
 
 client = Client(accSID, auth)
 
-from_whatsapp_number = 'whatsapp:+14155238886'
+from_whatsapp_number = '+441753208643'
 to_whatsapp_number = number
 
 
@@ -81,7 +81,7 @@ def render_metals():
 @app.route('/whatsapp', methods=['POST', 'GET'])
 def sendmessage():
 
-    if recaptcha.verify():    
+    if recaptcha.verify():
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
