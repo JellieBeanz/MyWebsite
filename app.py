@@ -151,22 +151,22 @@ def bitcoin():
         data = json.loads(response.text)
 
         myBTC = 1.00281086
-        myETH = 3.50251781
-        myLINK = 162.24
+        myETH = 2.0268
+        myLINK = 256.47
         myEOS = 5.7428
         myXLM = 1
         myNRG = 27.5
         myBAT = 248.7737
         myUSDT = 0.83952
         myBNB = 0.02348929
-        myCRO = 99.91
+        myCRO = 45.99
         myZIL = 9000
-        myWAVES = 104
-        myRVN = 3200
-        myMCO = 50
+        myWAVES = 0
+        myRVN = 0
+        myMCO = 100
         myUSDC = 269.17
         myXTZ = 47.71207716
-        myENJ = 1824.73543307
+        myENJ = 1827.73543307
         mySNX = 207.76676515
         myKNC = 243.81136694
         myREN = 1577.07449686
@@ -175,10 +175,10 @@ def bitcoin():
         myVET = 7000
         myTHETA = 500
         myCELR = 6000
-        myCHZ = 9000
+        myCHZ = 0
         myLEND = 914.82554757
         myUBT = 309.58876449
-        myFET = 1500
+        myFET = 0
 
         btcEUR = data['BTC']['EUR']
         ethEUR = data['ETH']['EUR']
@@ -254,9 +254,9 @@ def bitcoin():
             totalREN_EUR + totalRVN_EUR + totalXTZ_EUR
 
         # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-        labels = 'Btc', 'Eth', 'Link', 'ENJ', 'Other'
-        sizes = [totalBTC_EUR, totalETH_EUR,
-                 totalLINK_EUR, totalENJ_EUR, totalOther]
+        labels = 'Btc', 'Link', 'Snx', 'Eth', 'Other'
+        sizes = [totalBTC_EUR, totalLINK_EUR,
+                 totalSNX_EUR, totalETH_EUR, totalOther]
         # only "explode" the 2nd slice (i.e. 'Hogs')
         explode = (0.1, 0.1, 0.1, 0.1, 0.1)
 
