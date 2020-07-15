@@ -69,11 +69,11 @@ def index():
         return 'Could not delete task'
 
 
-@app.route('/metals')
-def render_metals():
+@app.route('/toursIreland')
+def render_toursIreland():
 
     try:
-        return render_template('metals.html')
+        return render_template('toursireland.html')
     except:
         return 'Could not connect to metals.html - make sure you have an internet connection'
 
