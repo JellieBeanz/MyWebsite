@@ -549,7 +549,7 @@ xclip
 }
 
 .section.lb {
-    background-color: #f2f3f5;
+    background-color: #dee2e6;
 }
 
 .section.db {
@@ -2296,8 +2296,9 @@ select.mobile-device {
 
 .contact_form {
     border: 1px solid #ededed;
+    border-radius: 25px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
-    background-color: #f2f3f5;
+    background-color:#dee2e6;
     padding: 40px 30px;
 }
 
