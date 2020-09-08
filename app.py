@@ -69,13 +69,6 @@ def index():
         return 'Could not delete task'
 
 
-@app.route('/toursIreland')
-def render_toursIreland():
-
-    try:
-        return render_template('toursireland.html')
-    except:
-        return 'Could not connect to metals.html - make sure you have an internet connection'
 
 
 @app.route('/whatsapp', methods=['POST', 'GET'])
@@ -95,6 +88,27 @@ def sendmessage():
     else:
         return 'Recaptcha Error'
 
+@app.route('/countdown')
+def countdown():
+    try:
+        return render_template('countdown.html')
+    except:
+        return 'Could find Countdown'
+
+@app.route('/recipeApp')
+def recipeApp():
+    try:
+        return render_template('recipeApp.html')
+    except:
+        return 'Could find Recipe App'
+
+
+@app.route('/quiz')
+def quiz():
+    try:
+        return render_template('quiz.html')
+    except:
+        return 'Could find quiz.html'
 
 @app.route('/taskmaster', methods=['POST', 'GET'])
 def taskmaster():

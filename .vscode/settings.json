@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "c:\\github\\MyWebsite\\env\\Scripts\\python.exe"
+    "python.pythonPath": "c:\\github\\MyWebsite\\env\\Scripts\\python.exe",
+    "liveServer.settings.port": 5501
 }
