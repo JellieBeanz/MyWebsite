@@ -12,12 +12,7 @@
     IMPORT FILES
 -------------------------------------------------------------------*/
 
-@import url(css/animate.css);
-@import url(css/camera.css);
-@import url(css/flaticon.css);
-@import url(css/prettyPhoto.css);
-@import url(css/owl.carousel.css);
-@import url(css/font-awesome.min.css);
+
 
 /*------------------------------------------------------------------
     SKELETON
@@ -707,7 +702,6 @@ xclip
 }
 .right-box-pro::before {
     content: "";
-    background: url(images/country-quilt-dark.png);
     width: 100%;
     height: 100%;
 	border-radius: 100px 100px 0px 100px;
@@ -2340,7 +2334,7 @@ select.mobile-device {
 }
 
 #contact {
-    background: url(images/1.jpg) no-repeat center center #ffffff;
+    background: no-repeat center center #ffffff;
 }
 
 .contact_form textarea.form-control{
@@ -2384,7 +2378,7 @@ select.mobile-device {
     font-weight: 400;
     font-size: 20px;
     text-transform: capitalize;
-    line-height: !important;
+    line-height: important;
 }
 
 .footer {
