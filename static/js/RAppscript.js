@@ -166,6 +166,8 @@ function showMealInfo(mealData) {
 function displayMealtoFavBar(mealData) {
 
     const favMeals = document.createElement('li');
+    favMeals.id = 'mealItem';
+    favMeals.className = 'item';
 
     favMeals.innerHTML =
         `
