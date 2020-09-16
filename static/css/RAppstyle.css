@@ -60,7 +60,8 @@ header button {
 .list {
     list-style: none;
     cursor: pointer;
-    padding: 20px;
+    margin-top: 0;
+    padding: 10px;
     display: flex;
     overflow-x: auto;
     overscroll-behavior: contain;
