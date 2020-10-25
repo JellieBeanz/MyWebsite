@@ -57,34 +57,22 @@ header button {
     padding: 0.25rem 1rem;
 }
 
-.list {
-    list-style: none;
+.fav-meals {
     cursor: pointer;
-    margin-top: 0;
-    padding: 10px;
     display: flex;
-    overflow-x: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: none;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
 
-    .list { -ms-overflow-style: none; }
-.list::-webkit-scrollbar { display: none; }
-
-
-.item {
+.fav-meals li {
     position: relative;
     width: 75px;
     margin: 5px;
-    flex-shrink: 0;
-    
 }
 
-.item:not(:last-child) { 
-    margin-right: 10px; 
-}
-
-.item .clear {
+.fav-meals li .clear {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -95,11 +83,11 @@ header button {
     font-size: 1rem;
 }
 
-.item:hover .clear {
+.fav-meals li:hover .clear {
     opacity: 1;
 }
 
-.item img {
+.fav-meals li img {
     box-shadow: 0 0 10px 2px #3333331a;
     border: 2px solid #ffffff;
     object-fit: cover;
@@ -108,7 +96,7 @@ header button {
     width: 70px;
 }
 
-.item span {
+.fav-meals li span {
     display: inline-block;
     font-size: 0.75rem;
     white-space: nowrap;
@@ -121,7 +109,7 @@ header button {
     left: 0;
 }
 
-.item:hover span {
+.fav-meals li:hover span {
     background-color: white;
     white-space: normal;
     overflow: auto;
