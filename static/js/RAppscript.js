@@ -8,6 +8,10 @@ const mealPopup = document.getElementById('meal-popup');
 const mealInfoEl = document.getElementById('meal-info');
 const popupCloseBtn = document.getElementById('close-popup');
 
+const tempFavs = ["52837", "52889", "52864", "52897", "52956"]
+
+localStorage.setItem('mealIds', JSON.stringify(tempFavs))
+
 getRandomMeal();
 
 fetchFavorites()
@@ -166,6 +170,8 @@ function showMealInfo(mealData) {
 function displayMealtoFavBar(mealData) {
 
     const favMeals = document.createElement('li');
+    favMeals.id = 'mealItem';
+    favMeals.className = 'item';
 
     favMeals.innerHTML =
         `

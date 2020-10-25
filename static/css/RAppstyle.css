@@ -57,22 +57,37 @@ header button {
     padding: 0.25rem 1rem;
 }
 
-.fav-meals {
+.list {
+    list-style: none;
     cursor: pointer;
+    margin-top: 0;
+    padding: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
+    overflow-x: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
 }
 
-.fav-meals li {
+.list {
+    -ms-overflow-style: none;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
     position: relative;
     width: 75px;
     margin: 5px;
+    flex-shrink: 0;
 }
 
-.fav-meals li .clear {
+.item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.item .clear {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -83,11 +98,11 @@ header button {
     font-size: 1rem;
 }
 
-.fav-meals li:hover .clear {
+.item:hover .clear {
     opacity: 1;
 }
 
-.fav-meals li img {
+.item img {
     box-shadow: 0 0 10px 2px #3333331a;
     border: 2px solid #ffffff;
     object-fit: cover;
@@ -96,7 +111,7 @@ header button {
     width: 70px;
 }
 
-.fav-meals li span {
+.item span {
     display: inline-block;
     font-size: 0.75rem;
     white-space: nowrap;
@@ -109,7 +124,7 @@ header button {
     left: 0;
 }
 
-.fav-meals li:hover span {
+.item:hover span {
     background-color: white;
     white-space: normal;
     overflow: auto;
