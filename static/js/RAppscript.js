@@ -1,6 +1,10 @@
 const mealsEl = document.getElementById('meals');
 const favoriteContainer = document.getElementById('fav-meals')
 
+const mobilecontainer = document.getElementById('mobile-container');
+
+
+
 const searchTerm = document.getElementById('search-term');
 const searchBtn = document.getElementById('search');
 
@@ -10,7 +14,9 @@ const popupCloseBtn = document.getElementById('close-popup');
 
 getRandomMeal();
 
-fetchFavorites()
+fetchFavorites();
+
+showFeatures();
 
 async function getRandomMeal() {
 
@@ -23,7 +29,6 @@ async function getRandomMeal() {
 async function getMealById(id) {
     const resp = await (await fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id)).json();
     const meal = resp.meals[0];
-    console.log(meal)
     return meal;
 
 }
@@ -116,6 +121,24 @@ async function fetchFavorites(){
        displayMealtoFavBar(meal);
     }
 
+}
+
+function showFeatures(){
+    const features = document.createElement('div');
+
+    features.innerHTML = `
+    <ol>
+        <lh>
+            <h2>Features:</h2>
+        </lh>
+        <li>Search for a key word. </li>
+        <li>Add your Favorite meals to Favorites bar using <i class="fa fa-heart"></i>. </li>
+        <li>Click on a meal for more information and ingredients. </li>
+        <li>Refresh the page for a new random meal</li>
+    </ol>
+    `
+
+    favoriteContainer.appendChild(features);
 }
 
 function showMealInfo(mealData) {
