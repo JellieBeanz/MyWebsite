@@ -1,4 +1,37 @@
-{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+{% extends 'base.html' %} {% block head %}
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-radius: 2rem;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #28a9e1;
+        color: white;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+{% endblock %} {% block body %}
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -66,13 +99,20 @@
                         to learning and gaining as much experience and exposure as I can. I love to work on interesting projects and challenge myself regularly. I have a mind for problem solving and working efficiently.</p>
                     <p>I have a heavy interest in crypto and blockchain, and other emerging technologies. I have studied Bitcoin and other crypto projects in great detail and have a good working knowledge of Ethereum and smart contract platforms. </p>
 
-                    <a href="/static/uploads/Shane O'Neill CV.pdf" class="sim-btn hvr-bounce-to-top" target="_blank"><span>View My CV</span></a>
+                    <div class="dropdown">
+                        <button class="sim-btn hvr-bounce-to-top dropbtn">View My CV</button>
+                        <div class="dropdown-content">
+                            <a href="/static/uploads/Shane O'Neill CV.pdf" target="_blank">Blockchain</a>
+                            <a href="/static/uploads/Shane O'Neill CV WebDev.pdf" target="_blank">Web Developer</a>
+                        </div>
+                    </div>
                     <a href="https://www.linkedin.com/in/shane-o-neill-77225712a/" class="sim-btn hvr-bounce-to-top" target="_blank"><span>LinkedIn</span></a>
                     <a href="https://github.com/JellieBeanz/" class="sim-btn hvr-bounce-to-top" target="_blank"><span>GitHub</span></a>
                 </div>
                 <!-- end messagebox -->
             </div>
             <!-- end col -->
+
 
             <div class="col-md-6">
                 <div class="right-box-pro wow fadeIn">
@@ -420,6 +460,7 @@
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i>^</a>
 
+
     <!-- ALL JS FILES -->
     <script src="/static/js/all.js"></script>
     <!-- Camera Slider -->
@@ -433,5 +474,6 @@
     <!-- ALL PLUGINS -->
     <script src="/static/js/custom.js"></script>
     <script src="/static/js/jquery.vide.js"></script>
+
 
     {% endblock %}
